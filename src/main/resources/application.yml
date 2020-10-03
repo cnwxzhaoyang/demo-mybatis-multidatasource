@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: migration
+
+# 旧数据源配置
+old:
+  datasource:
+    url: jdbc:oracle:thin:@127.0.0.1:1521:orcl
+    driverClassName: oracle.jdbc.OracleDriver
+    username: fly
+    password: fly
+    type: com.alibaba.druid.pool.DruidDataSource
+
+# 新数据源配置
+new:
+  datasource:
+    url: jdbc:oracle:thin:@127.0.0.1:1521:orcl
+    driverClassName: oracle.jdbc.OracleDriver
+    username: orienttdm_envir_force
+    password: orienttdm_envir_force
+    type: com.alibaba.druid.pool.DruidDataSource

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.orient.data.migration.dao._new.NewUserMapper" >
+  <resultMap id="BaseResultMap" type="com.orient.data.migration.entity._new.NewUser" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="SYS_DATE_TIME" property="sysDateTime" jdbcType="TIMESTAMP" />
+    <result column="SYS_USERNAME" property="sysUsername" jdbcType="VARCHAR" />
+    <result column="SYS_IS_DELETE" property="sysIsDelete" jdbcType="DECIMAL" />
+    <result column="SYS_SECRECY" property="sysSecrecy" jdbcType="VARCHAR" />
+    <result column="SYS_SCHEMA" property="sysSchema" jdbcType="VARCHAR" />
+    <result column="SYS_OPERATE" property="sysOperate" jdbcType="VARCHAR" />
+    <result column="SYS_FLOW" property="sysFlow" jdbcType="VARCHAR" />
+    <result column="MOBILE_3243" property="mobile3243" jdbcType="VARCHAR" />
+    <result column="COMMENTS_3243" property="comments3243" jdbcType="VARCHAR" />
+    <result column="USERNAME_3243" property="username3243" jdbcType="VARCHAR" />
+    <result column="EMAIL_3243" property="email3243" jdbcType="VARCHAR" />
+    <result column="SEX_3243" property="sex3243" jdbcType="VARCHAR" />
+    <result column="USERID_3243" property="userid3243" jdbcType="DECIMAL" />
+    <result column="LOGINNAME_3243" property="loginname3243" jdbcType="VARCHAR" />
+    <result column="OLDID_3243" property="oldid3243" jdbcType="VARCHAR" />
+    <result column="PASWRD_3243" property="paswrd3243" jdbcType="VARCHAR" />
+    <result column="TEL_3243" property="tel3243" jdbcType="VARCHAR" />
+    <result column="ROLEID_3243" property="roleid3243" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, SYS_DATE_TIME, SYS_USERNAME, SYS_IS_DELETE, SYS_SECRECY, SYS_SCHEMA, SYS_OPERATE, 
+    SYS_FLOW, MOBILE_3243, COMMENTS_3243, USERNAME_3243, EMAIL_3243, SEX_3243, USERID_3243, 
+    LOGINNAME_3243, OLDID_3243, PASWRD_3243, TEL_3243, ROLEID_3243
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from FEQS_USER_500
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from FEQS_USER_500
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.orient.data.migration.entity._new.NewUser" >
+    insert into FEQS_USER_500 (ID, SYS_DATE_TIME, SYS_USERNAME, 
+      SYS_IS_DELETE, SYS_SECRECY, SYS_SCHEMA, 
+      SYS_OPERATE, SYS_FLOW, MOBILE_3243, 
+      COMMENTS_3243, USERNAME_3243, EMAIL_3243, 
+      SEX_3243, USERID_3243, LOGINNAME_3243, 
+      OLDID_3243, PASWRD_3243, TEL_3243, 
+      ROLEID_3243)
+    values (#{id,jdbcType=VARCHAR}, #{sysDateTime,jdbcType=TIMESTAMP}, #{sysUsername,jdbcType=VARCHAR}, 
+      #{sysIsDelete,jdbcType=DECIMAL}, #{sysSecrecy,jdbcType=VARCHAR}, #{sysSchema,jdbcType=VARCHAR}, 
+      #{sysOperate,jdbcType=VARCHAR}, #{sysFlow,jdbcType=VARCHAR}, #{mobile3243,jdbcType=VARCHAR}, 
+      #{comments3243,jdbcType=VARCHAR}, #{username3243,jdbcType=VARCHAR}, #{email3243,jdbcType=VARCHAR}, 
+      #{sex3243,jdbcType=VARCHAR}, #{userid3243,jdbcType=DECIMAL}, #{loginname3243,jdbcType=VARCHAR}, 
+      #{oldid3243,jdbcType=VARCHAR}, #{paswrd3243,jdbcType=VARCHAR}, #{tel3243,jdbcType=VARCHAR}, 
+      #{roleid3243,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.orient.data.migration.entity._new.NewUser" >
+    insert into FEQS_USER_500
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="sysDateTime != null" >
+        SYS_DATE_TIME,
+      </if>
+      <if test="sysUsername != null" >
+        SYS_USERNAME,
+      </if>
+      <if test="sysIsDelete != null" >
+        SYS_IS_DELETE,
+      </if>
+      <if test="sysSecrecy != null" >
+        SYS_SECRECY,
+      </if>
+      <if test="sysSchema != null" >
+        SYS_SCHEMA,
+      </if>
+      <if test="sysOperate != null" >
+        SYS_OPERATE,
+      </if>
+      <if test="sysFlow != null" >
+        SYS_FLOW,
+      </if>
+      <if test="mobile3243 != null" >
+        MOBILE_3243,
+      </if>
+      <if test="comments3243 != null" >
+        COMMENTS_3243,
+      </if>
+      <if test="username3243 != null" >
+        USERNAME_3243,
+      </if>
+      <if test="email3243 != null" >
+        EMAIL_3243,
+      </if>
+      <if test="sex3243 != null" >
+        SEX_3243,
+      </if>
+      <if test="userid3243 != null" >
+        USERID_3243,
+      </if>
+      <if test="loginname3243 != null" >
+        LOGINNAME_3243,
+      </if>
+      <if test="oldid3243 != null" >
+        OLDID_3243,
+      </if>
+      <if test="paswrd3243 != null" >
+        PASWRD_3243,
+      </if>
+      <if test="tel3243 != null" >
+        TEL_3243,
+      </if>
+      <if test="roleid3243 != null" >
+        ROLEID_3243,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="sysDateTime != null" >
+        #{sysDateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sysUsername != null" >
+        #{sysUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="sysIsDelete != null" >
+        #{sysIsDelete,jdbcType=DECIMAL},
+      </if>
+      <if test="sysSecrecy != null" >
+        #{sysSecrecy,jdbcType=VARCHAR},
+      </if>
+      <if test="sysSchema != null" >
+        #{sysSchema,jdbcType=VARCHAR},
+      </if>
+      <if test="sysOperate != null" >
+        #{sysOperate,jdbcType=VARCHAR},
+      </if>
+      <if test="sysFlow != null" >
+        #{sysFlow,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile3243 != null" >
+        #{mobile3243,jdbcType=VARCHAR},
+      </if>
+      <if test="comments3243 != null" >
+        #{comments3243,jdbcType=VARCHAR},
+      </if>
+      <if test="username3243 != null" >
+        #{username3243,jdbcType=VARCHAR},
+      </if>
+      <if test="email3243 != null" >
+        #{email3243,jdbcType=VARCHAR},
+      </if>
+      <if test="sex3243 != null" >
+        #{sex3243,jdbcType=VARCHAR},
+      </if>
+      <if test="userid3243 != null" >
+        #{userid3243,jdbcType=DECIMAL},
+      </if>
+      <if test="loginname3243 != null" >
+        #{loginname3243,jdbcType=VARCHAR},
+      </if>
+      <if test="oldid3243 != null" >
+        #{oldid3243,jdbcType=VARCHAR},
+      </if>
+      <if test="paswrd3243 != null" >
+        #{paswrd3243,jdbcType=VARCHAR},
+      </if>
+      <if test="tel3243 != null" >
+        #{tel3243,jdbcType=VARCHAR},
+      </if>
+      <if test="roleid3243 != null" >
+        #{roleid3243,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.orient.data.migration.entity._new.NewUser" >
+    update FEQS_USER_500
+    <set >
+      <if test="sysDateTime != null" >
+        SYS_DATE_TIME = #{sysDateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="sysUsername != null" >
+        SYS_USERNAME = #{sysUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="sysIsDelete != null" >
+        SYS_IS_DELETE = #{sysIsDelete,jdbcType=DECIMAL},
+      </if>
+      <if test="sysSecrecy != null" >
+        SYS_SECRECY = #{sysSecrecy,jdbcType=VARCHAR},
+      </if>
+      <if test="sysSchema != null" >
+        SYS_SCHEMA = #{sysSchema,jdbcType=VARCHAR},
+      </if>
+      <if test="sysOperate != null" >
+        SYS_OPERATE = #{sysOperate,jdbcType=VARCHAR},
+      </if>
+      <if test="sysFlow != null" >
+        SYS_FLOW = #{sysFlow,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile3243 != null" >
+        MOBILE_3243 = #{mobile3243,jdbcType=VARCHAR},
+      </if>
+      <if test="comments3243 != null" >
+        COMMENTS_3243 = #{comments3243,jdbcType=VARCHAR},
+      </if>
+      <if test="username3243 != null" >
+        USERNAME_3243 = #{username3243,jdbcType=VARCHAR},
+      </if>
+      <if test="email3243 != null" >
+        EMAIL_3243 = #{email3243,jdbcType=VARCHAR},
+      </if>
+      <if test="sex3243 != null" >
+        SEX_3243 = #{sex3243,jdbcType=VARCHAR},
+      </if>
+      <if test="userid3243 != null" >
+        USERID_3243 = #{userid3243,jdbcType=DECIMAL},
+      </if>
+      <if test="loginname3243 != null" >
+        LOGINNAME_3243 = #{loginname3243,jdbcType=VARCHAR},
+      </if>
+      <if test="oldid3243 != null" >
+        OLDID_3243 = #{oldid3243,jdbcType=VARCHAR},
+      </if>
+      <if test="paswrd3243 != null" >
+        PASWRD_3243 = #{paswrd3243,jdbcType=VARCHAR},
+      </if>
+      <if test="tel3243 != null" >
+        TEL_3243 = #{tel3243,jdbcType=VARCHAR},
+      </if>
+      <if test="roleid3243 != null" >
+        ROLEID_3243 = #{roleid3243,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.orient.data.migration.entity._new.NewUser" >
+    update FEQS_USER_500
+    set SYS_DATE_TIME = #{sysDateTime,jdbcType=TIMESTAMP},
+      SYS_USERNAME = #{sysUsername,jdbcType=VARCHAR},
+      SYS_IS_DELETE = #{sysIsDelete,jdbcType=DECIMAL},
+      SYS_SECRECY = #{sysSecrecy,jdbcType=VARCHAR},
+      SYS_SCHEMA = #{sysSchema,jdbcType=VARCHAR},
+      SYS_OPERATE = #{sysOperate,jdbcType=VARCHAR},
+      SYS_FLOW = #{sysFlow,jdbcType=VARCHAR},
+      MOBILE_3243 = #{mobile3243,jdbcType=VARCHAR},
+      COMMENTS_3243 = #{comments3243,jdbcType=VARCHAR},
+      USERNAME_3243 = #{username3243,jdbcType=VARCHAR},
+      EMAIL_3243 = #{email3243,jdbcType=VARCHAR},
+      SEX_3243 = #{sex3243,jdbcType=VARCHAR},
+      USERID_3243 = #{userid3243,jdbcType=DECIMAL},
+      LOGINNAME_3243 = #{loginname3243,jdbcType=VARCHAR},
+      OLDID_3243 = #{oldid3243,jdbcType=VARCHAR},
+      PASWRD_3243 = #{paswrd3243,jdbcType=VARCHAR},
+      TEL_3243 = #{tel3243,jdbcType=VARCHAR},
+      ROLEID_3243 = #{roleid3243,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
